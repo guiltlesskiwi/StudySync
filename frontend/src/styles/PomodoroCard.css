@@ -1,0 +1,162 @@
+.pomodoro-card{
+
+    background:#252C4B;
+    border:1px solid rgba(255,255,255,.08);
+
+    border-radius:22px;
+
+    padding:30px;
+
+    text-align:center;
+
+    backdrop-filter:blur(20px);
+}
+
+.pomodoro-card h2{
+
+    color:white;
+
+    margin-bottom:25px;
+
+    font-size:24px;
+}
+
+/* ==========================
+   Time Selector
+========================== */
+
+.time-selector{
+
+    display:flex;
+    flex-direction:column;
+
+    text-align:left;
+
+    margin-bottom:30px;
+}
+
+.time-selector label{
+
+    color:#AEB5D7;
+
+    margin-bottom:10px;
+
+    font-size:14px;
+}
+
+.time-selector select{
+
+    background:#313B63;
+
+    border:none;
+
+    outline:none;
+
+    border-radius:12px;
+
+    color:white;
+
+    padding:14px 16px;
+
+    font-size:15px;
+
+    cursor:pointer;
+}
+
+.time-selector select:disabled{
+
+    opacity:.6;
+
+    cursor:not-allowed;
+}
+
+/* ==========================
+   Timer
+========================== */
+
+.timer{
+
+    margin:35px 0;
+}
+
+.timer h1{
+
+    font-size:64px;
+
+    color:white;
+
+    font-weight:700;
+
+    letter-spacing:2px;
+}
+
+.timer p{
+
+    color:#AEB5D7;
+
+    margin-top:10px;
+}
+
+/* ==========================
+   Buttons
+========================== */
+
+.pomodoro-btn{
+
+    width:100%;
+
+    padding:16px;
+
+    border:none;
+
+    border-radius:14px;
+
+    cursor:pointer;
+
+    color:white;
+
+    font-size:16px;
+
+    font-weight:600;
+
+    background:linear-gradient(
+        135deg,
+        #D792C8,
+        #B47CFF
+    );
+
+    transition:.3s;
+}
+
+.pomodoro-btn:hover{
+
+    transform:translateY(-2px);
+}
+
+.reset-btn{
+
+    width:100%;
+
+    margin-top:14px;
+
+    padding:15px;
+
+    border:none;
+
+    border-radius:14px;
+
+    background:#3B4670;
+
+    color:white;
+
+    font-size:15px;
+
+    cursor:pointer;
+
+    transition:.3s;
+}
+
+.reset-btn:hover{
+
+    background:#4A5A8B;
+}

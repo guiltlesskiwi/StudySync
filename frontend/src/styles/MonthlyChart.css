@@ -1,0 +1,12 @@
+.monthly-chart-card{
+    background:#252b49;
+    border:1px solid rgba(255,255,255,.05);
+    border-radius:18px;
+    padding:22px;
+}
+
+.monthly-chart-card h3{
+    color:white;
+    margin-bottom:20px;
+    font-size:18px;
+}

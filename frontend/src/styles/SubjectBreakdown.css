@@ -1,0 +1,47 @@
+.subject-breakdown-card {
+  background: #2d315b;
+  border-radius: 18px;
+  padding: 20px;
+  color: white;
+  height: 100%;
+}
+
+.subject-breakdown-card h3 {
+  margin-bottom: 20px;
+  font-size: 18px;
+}
+
+.subject-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.subject-item {
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+}
+
+.progress {
+  width: 100%;
+  height: 8px;
+  background: rgba(255,255,255,0.1);
+  border-radius: 50px;
+  overflow: hidden;
+}
+
+.fill {
+  height: 100%;
+  border-radius: 50px;
+}
+
+.fill{
+    height:100%;
+    border-radius:10px;
+    background:linear-gradient(
+        90deg,
+        #d88cff,
+        #8cb6ff
+    );
+}

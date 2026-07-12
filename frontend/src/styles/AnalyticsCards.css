@@ -1,0 +1,43 @@
+.analytics-cards{
+    display:grid;
+    grid-template-columns:repeat(5,1fr);
+    gap:18px;
+    margin-bottom:30px;
+}
+
+.analytics-card{
+    background:#202a4a;
+    border:1px solid rgba(255,255,255,.08);
+    border-radius:18px;
+    padding:22px;
+    transition:.3s;
+}
+
+.analytics-card:hover{
+    transform:translateY(-4px);
+}
+
+.analytics-card p{
+    color:#8893b8;
+    font-size:13px;
+    margin-bottom:12px;
+}
+
+.analytics-card h2{
+    color:white;
+    font-size:32px;
+    margin-bottom:8px;
+}
+
+.analytics-card span{
+    color:#8b95b3;
+    font-size:13px;
+}
+
+.positive{
+    color:#53d769;
+}
+
+.negative{
+    color:#ff7b7b;
+}

@@ -1,0 +1,61 @@
+.study-card {
+  margin-top: 40px;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 22px;
+  padding: 28px;
+  color: #fff;
+}
+
+.study-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.study-header h2 {
+  font-size: 26px;
+  font-weight: 700;
+}
+
+.study-header p {
+  color: #b7bdd8;
+}
+
+.study-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+.study-item:last-child {
+  border-bottom: none;
+}
+
+.study-item h3 {
+  font-size: 18px;
+  margin-bottom: 6px;
+}
+
+.study-item span {
+  font-size: 14px;
+  color: #b7bdd8;
+}
+
+.study-item.completed h3 {
+  color: #7ee787;
+}
+.empty-text {
+  color: #b7bfdc;
+  text-align: center;
+  padding: 20px;
+  font-size: 15px;
+}
+
+.study-status{
+  font-size:22px;
+  color:#8b5cf6;
+}

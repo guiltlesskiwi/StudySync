@@ -1,0 +1,53 @@
+.recent-card{
+    background:#2a3155;
+    border-radius:24px;
+    padding:28px;
+}
+
+.card-title{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:25px;
+}
+
+.card-title h2{
+    color:white;
+    font-size:28px;
+}
+
+.card-title button{
+    border:none;
+    background:#d48bf7;
+    color:white;
+    padding:8px 18px;
+    border-radius:12px;
+    cursor:pointer;
+}
+
+.note-item{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    padding:18px 0;
+
+    border-bottom:1px solid rgba(255,255,255,.08);
+}
+
+.note-item:last-child{
+    border:none;
+}
+
+.note-item h3{
+    color:white;
+    margin-bottom:5px;
+}
+
+.note-item p{
+    color:#9aa4d1;
+}
+
+.note-item span{
+    font-size:24px;
+}

@@ -1,0 +1,359 @@
+.dashboard{
+
+    position:relative;
+
+    z-index:2;
+
+}
+
+.dashboard-header{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-bottom:45px;
+
+}
+
+.greeting{
+
+    color:var(--text-light);
+
+    font-size:15px;
+
+    margin-bottom:8px;
+
+}
+
+.dashboard h1{
+
+    font-size:42px;
+
+    font-weight:700;
+
+}
+
+.header-right{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:20px;
+
+}
+
+.add-btn{
+
+    background:linear-gradient(
+        135deg,
+        #D792C8,
+        #B47CFF
+    );
+
+    color:white;
+
+    padding:14px 28px;
+
+    border-radius:15px;
+
+    font-size:15px;
+
+    font-weight:600;
+
+    transition:.3s;
+
+}
+
+.add-btn:hover{
+
+    transform:translateY(-2px);
+
+}
+
+.avatar{
+
+    width:52px;
+
+    height:52px;
+
+    border-radius:50%;
+
+    object-fit:cover;
+
+    border:3px solid rgba(255,255,255,.15);
+
+}
+/* ======================
+   Stats Grid
+====================== */
+
+.stats-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(4,1fr);
+
+    gap:22px;
+
+}
+
+/* ======================
+   Card
+====================== */
+
+.stat-card{
+
+    background:rgba(255,255,255,.06);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    border-radius:22px;
+
+    padding:24px;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:18px;
+
+    backdrop-filter:blur(20px);
+
+    transition:.3s;
+
+}
+
+.stat-card:hover{
+
+    transform:translateY(-4px);
+
+}
+
+.stat-icon{
+
+    width:58px;
+
+    height:58px;
+
+    border-radius:18px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    font-size:28px;
+
+    background:linear-gradient(
+        135deg,
+        #B47CFF,
+        #D792C8
+    );
+
+}
+
+.stat-title{
+
+    color:#B5B7D4;
+
+    font-size:14px;
+
+    margin-bottom:8px;
+
+}
+
+.stat-card h2{
+
+    font-size:28px;
+
+    font-weight:700;
+
+}
+.dashboard-header{
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-start;
+    margin-bottom:40px;
+}
+
+.header-right{
+    display:flex;
+    align-items:center;
+    gap:18px;
+}
+
+.stats-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:24px;
+    margin-top:20px;
+}
+/* ===========================
+   Bottom Grid
+=========================== */
+
+.bottom-grid{
+    display:grid;
+    grid-template-columns:2fr 1fr;
+    gap:28px;
+    margin-top:35px;
+}
+
+/* ===========================
+   Weekly Progress
+=========================== */
+
+.progress-card{
+    background:#252C4B;
+    border:1px solid rgba(255,255,255,.08);
+    border-radius:22px;
+    padding:30px;
+}
+.card-title{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:30px;
+}
+
+.card-title h2{
+    color:white;
+}
+
+.card-title p{
+    color:#b7bdd8;
+}
+
+.chart{
+    height:250px;
+    display:flex;
+    align-items:flex-end;
+    justify-content:space-around;
+    gap:18px;
+}
+.bar-box{
+    height:100%;
+    display:flex;
+    flex-direction:column;
+    justify-content:flex-end;
+    align-items:center;
+    gap:12px;
+}
+
+.bar{
+    width:24px;
+    min-height:20px;
+    border-radius:14px 14px 0 0;
+
+    background:linear-gradient(
+        180deg,
+        #F7B8FF 0%,
+        #D792FF 35%,
+        #B47CFF 65%,
+        #b59eec 100%
+    );
+
+    box-shadow:
+        0 0 10px rgba(215,146,255,.6),
+        0 0 25px rgba(180,124,255,.45);
+
+    transition:all .3s ease;
+}
+
+.bar:hover{
+    transform:translateY(-4px);
+    box-shadow:0 12px 22px rgba(180,124,255,.5);
+}
+
+.bar:hover {
+  transform: scaleY(1.05);
+  filter: brightness(1.15);
+}
+
+.bar:hover{
+    transform:scaleY(1.05);
+}
+
+.bar-box span{
+    color:#98a2ce;
+    font-size:14px;
+}
+
+/* ===========================
+   Deadlines
+=========================== */
+
+.upcoming-card{
+    background:rgba(255,255,255,.05);
+    border:1px solid rgba(255,255,255,.08);
+    border-radius:22px;
+    padding:30px;
+}
+
+.upcoming-card h2{
+    color:white;
+    margin-bottom:25px;
+}
+
+.deadline{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:18px 0;
+    border-bottom:1px solid rgba(255,255,255,.08);
+}
+
+.deadline:last-child{
+    border-bottom:none;
+}
+
+.deadline h4{
+    color:white;
+    margin-bottom:6px;
+}
+
+.deadline p{
+    color:#b7bdd8;
+    font-size:14px;
+}
+
+.deadline span{
+    padding:6px 12px;
+    border-radius:999px;
+    font-size:12px;
+    font-weight:600;
+}
+
+.danger{
+    background:#ef4444;
+}
+
+.warning{
+    background:#f59e0b;
+}
+
+.success{
+    background:#22c55e;
+}
+.bottom-grid{
+    display:grid;
+    grid-template-columns:2fr 1fr;
+    gap:25px;
+    margin-top:30px;
+}
+
+@media(max-width:1100px){
+    .bottom-grid{
+        grid-template-columns:1fr;
+    }
+}
+.empty-text{
+    color:#b7bfdc;
+    text-align:center;
+    padding:20px;
+}

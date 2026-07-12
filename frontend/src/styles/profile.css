@@ -1,0 +1,225 @@
+.profile-page{
+    max-width:1200px;
+    margin:auto;
+}
+
+/* ==========================
+   Header
+========================== */
+
+.profile-header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:35px;
+}
+
+.profile-left{
+    display:flex;
+    align-items:center;
+    gap:25px;
+}
+
+.profile-avatar{
+    width:110px;
+    height:110px;
+    border-radius:50%;
+
+    background:linear-gradient(135deg,#d79af8,#8cb6ff);
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    color:white;
+    font-size:34px;
+    font-weight:700;
+
+    position:relative;
+
+    box-shadow:0 15px 40px rgba(0,0,0,.3);
+}
+
+.online-dot{
+    position:absolute;
+    bottom:8px;
+    right:8px;
+
+    width:18px;
+    height:18px;
+
+    border-radius:50%;
+
+    background:#22c55e;
+
+    border:3px solid #1b2344;
+}
+
+.profile-info h1{
+    color:white;
+    font-size:40px;
+    margin-bottom:8px;
+}
+
+.profile-info h3{
+    color:#c8cce3;
+    font-size:20px;
+    margin-bottom:12px;
+}
+
+.profile-info p{
+    color:#9fa8c7;
+    line-height:1.7;
+    max-width:600px;
+}
+
+.edit-btn{
+    padding:14px 28px;
+
+    border:none;
+    border-radius:14px;
+
+    background:linear-gradient(135deg,#d79af8,#b47cff);
+
+    color:white;
+
+    font-size:15px;
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:.3s;
+}
+
+.edit-btn:hover{
+    transform:translateY(-3px);
+}
+
+/* ==========================
+   Goal Card
+========================== */
+
+.goal-card{
+    margin-bottom:30px;
+
+    background:rgba(255,255,255,.05);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    border-radius:20px;
+
+    padding:28px;
+}
+
+.goal-title{
+    color:#d79af8;
+    margin-bottom:10px;
+}
+
+.goal-card h2{
+    color:white;
+    font-size:30px;
+}
+
+/* ==========================
+   Stats
+========================== */
+
+.profile-stats{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:22px;
+}
+
+.profile-stat{
+    background:rgba(255,255,255,.05);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    border-radius:20px;
+
+    padding:28px;
+
+    text-align:center;
+
+    transition:.3s;
+}
+
+.profile-stat:hover{
+    transform:translateY(-5px);
+}
+
+.profile-stat h2{
+    color:#d79af8;
+    font-size:34px;
+    margin-bottom:10px;
+}
+
+.profile-stat p{
+    color:#b4bdd8;
+}
+
+/* ==========================
+   Sign Out
+========================== */
+
+.profile-signout{
+    margin-top:45px;
+}
+
+.signout-btn{
+    width:100%;
+
+    padding:18px;
+
+    border-radius:18px;
+
+    border:1px solid rgba(255,255,255,.08);
+
+    background:transparent;
+
+    color:#ff8ca4;
+
+    font-size:16px;
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:.3s;
+}
+
+.signout-btn:hover{
+    background:#ff5b7f;
+    color:white;
+}
+
+/* ==========================
+   Responsive
+========================== */
+
+@media(max-width:900px){
+
+    .profile-header{
+        flex-direction:column;
+        align-items:flex-start;
+        gap:25px;
+    }
+
+    .profile-left{
+        flex-direction:column;
+        align-items:flex-start;
+    }
+
+    .profile-stats{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+}
+
+@media(max-width:600px){
+
+    .profile-stats{
+        grid-template-columns:1fr;
+    }
+
+}

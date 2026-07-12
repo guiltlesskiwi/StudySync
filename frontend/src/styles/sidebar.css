@@ -1,0 +1,162 @@
+.sidebar {
+    width: 250px;
+    height: 100vh;
+
+    position: fixed;
+    left: 0;
+    top: 0;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    padding: 26px 18px;
+
+    background: rgba(20, 33, 67, 0.95);
+
+    border-right: 1px solid rgba(255,255,255,0.05);
+
+    backdrop-filter: blur(25px);
+}
+
+/* ---------- LOGO ---------- */
+
+.logo{
+    display:flex;
+    align-items:center;
+    gap:14px;
+
+    margin-bottom:45px;
+}
+
+.logo-box{
+
+    width:42px;
+    height:42px;
+
+    border-radius:12px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    font-weight:700;
+    font-size:20px;
+
+    color:white;
+
+    background:linear-gradient(
+        135deg,
+        #D79AF8,
+        #8CB6FF
+    );
+
+    box-shadow:0 10px 25px rgba(0,0,0,.25);
+}
+
+.logo h2{
+
+    font-size:24px;
+
+    color:white;
+
+    font-weight:700;
+}
+
+/* ---------- TITLE ---------- */
+
+.menu-title{
+
+    font-size:12px;
+
+    color:#7E89AF;
+
+    letter-spacing:2px;
+
+    margin-bottom:18px;
+}
+
+/* ---------- MENU ---------- */
+
+.menu{
+
+    display:flex;
+    flex-direction:column;
+
+    gap:8px;
+}
+
+.menu-item{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:14px;
+
+    padding:14px 18px;
+
+    border-radius:14px;
+
+    color:#8E99C5;
+
+    text-decoration:none;
+
+    transition:.25s;
+}
+
+.menu-item:hover{
+
+    background:#23355F;
+
+    color:white;
+}
+
+.menu-item.active{
+
+    background:linear-gradient(
+        90deg,
+        rgba(223,146,219,.25),
+        rgba(255,255,255,.05)
+    );
+
+    color:white;
+
+    border:1px solid rgba(230,180,255,.25);
+}
+
+.icon{
+
+    font-size:18px;
+}
+
+/* ---------- STREAK ---------- */
+
+.streak-card{
+
+    background:#243962;
+
+    border-radius:18px;
+
+    padding:22px;
+
+    border:1px solid rgba(255,255,255,.06);
+}
+
+.streak-label{
+
+    color:#8A96BC;
+
+    font-size:13px;
+
+    margin-bottom:10px;
+}
+
+.streak-card h2{
+
+    color:white;
+
+    font-size:30px;
+
+    font-weight:700;
+}

@@ -1,0 +1,71 @@
+.layout{
+
+    display:flex;
+
+    min-height:100vh;
+
+    background:var(--bg);
+
+}
+
+.main-content{
+
+    margin-left:250px;
+
+    width:calc(100% - 250px);
+
+    min-height:100vh;
+
+    padding:42px 48px;
+
+    background:var(--bg);
+
+    overflow-y:auto;
+
+    position:relative;
+
+}
+
+/* Left Glow */
+
+.main-content::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:520px;
+    height:520px;
+
+    left:-180px;
+    top:-160px;
+
+    background:rgba(216,146,200,.12);
+
+    filter:blur(170px);
+
+    pointer-events:none;
+
+}
+
+/* Right Glow */
+
+.main-content::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:650px;
+    height:650px;
+
+    right:-250px;
+    bottom:-250px;
+
+    background:rgba(119,108,255,.10);
+
+    filter:blur(190px);
+
+    pointer-events:none;
+
+}

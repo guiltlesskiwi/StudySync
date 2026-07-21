@@ -1,46 +1,72 @@
 import "../styles/SubjectProgressCard.css";
+import { useTasks } from "../context/TaskContext";
 
 function SubjectProgressCard() {
+  const { tasks } = useTasks();
+
+  // Group tasks by subject
+  const subjectStats = {};
+
+  tasks.forEach((task) => {
+    if (!task.subject) return;
+
+    if (!subjectStats[task.subject]) {
+      subjectStats[task.subject] = {
+        total: 0,
+        completed: 0,
+      };
+    }
+
+    subjectStats[task.subject].total++;
+
+    if (task.completed) {
+      subjectStats[task.subject].completed++;
+    }
+  });
+
+  const subjects = Object.entries(subjectStats);
+
   return (
     <div className="subject-progress">
 
       <h2>Subject Progress</h2>
 
-      <div className="subject">
+      {subjects.length === 0 ? (
+        <p>No subjects available.</p>
+      ) : (
+        subjects.map(([subject, stats]) => {
 
-        <span>DSA</span>
+          const percentage =
+            stats.total === 0
+              ? 0
+              : Math.round(
+                  (stats.completed / stats.total) * 100
+                );
 
-        <div className="bar">
-          <div style={{ width: "85%" }}></div>
-        </div>
+          return (
+            <div
+              className="subject"
+              key={subject}
+            >
 
-        <span>85%</span>
+              <span>{subject}</span>
 
-      </div>
+              <div className="bar">
 
-      <div className="subject">
+                <div
+                  style={{
+                    width: `${percentage}%`,
+                  }}
+                ></div>
 
-        <span>DBMS</span>
+              </div>
 
-        <div className="bar">
-          <div style={{ width: "60%" }}></div>
-        </div>
+              <span>{percentage}%</span>
 
-        <span>60%</span>
-
-      </div>
-
-      <div className="subject">
-
-        <span>React</span>
-
-        <div className="bar">
-          <div style={{ width: "75%" }}></div>
-        </div>
-
-        <span>75%</span>
-
-      </div>
+            </div>
+          );
+        })
+      )}
 
     </div>
   );

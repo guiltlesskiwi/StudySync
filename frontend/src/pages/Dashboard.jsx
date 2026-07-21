@@ -10,45 +10,108 @@ import ReminderCard from "../components/ReminderCard";
 
 import { useNavigate } from "react-router-dom";
 import { useTasks } from "../context/TaskContext";
+import { useAuth } from "../context/AuthContext";
 
 function Dashboard() {
   const navigate = useNavigate();
+
   const { tasks } = useTasks();
+  const { currentUser } = useAuth();
 
-  // Total Tasks
-  const totalTasks = tasks.length;
+  // ==========================
+  // Today's Date
+  // ==========================
 
-  // Completed Tasks
-  const completedTasks = tasks.filter(
+  const today = new Date().toISOString().split("T")[0];
+
+  // ==========================
+  // Today's Tasks
+  // ==========================
+
+  const todaysTasks = tasks.filter(
+    (task) => task.date === today
+  );
+
+  // ==========================
+  // Upcoming Tasks
+  // ==========================
+
+  const upcomingTasks = tasks.filter(
+    (task) => task.date > today
+  );
+
+  // ==========================
+  // Dashboard Stats
+  // ==========================
+
+  const totalTasks = todaysTasks.length;
+
+  const completedTasks = todaysTasks.filter(
     (task) => task.completed
   ).length;
 
-  // Focus Score
   const focusScore =
     totalTasks === 0
       ? 0
       : Math.round((completedTasks / totalTasks) * 100);
 
-  // Current Streak
+  // Temporary Streak
   const streak = completedTasks;
 
-  // Subjects (temporary)
-  const subjects = new Set(tasks.map((task) => task.title)).size;
+  // Today's Subjects
+  const subjects = new Set(
+    todaysTasks.map((task) => task.subject)
+  ).size;
 
+  // ==========================
   // Total Study Hours
+  // ==========================
+
   let totalHours = 0;
 
-  tasks.forEach((task) => {
+  todaysTasks.forEach((task) => {
     if (!task.duration) return;
 
     const num = parseFloat(task.duration);
 
     if (isNaN(num)) return;
 
-    if (task.duration.toLowerCase().includes("min"))
+    if (
+      String(task.duration)
+        .toLowerCase()
+        .includes("min")
+    ) {
       totalHours += num / 60;
-    else totalHours += num;
+    } else {
+      totalHours += num;
+    }
   });
+
+  // ==========================
+  // Dynamic Greeting
+  // ==========================
+
+  const hour = new Date().getHours();
+
+  let greeting = "🌙 Good Evening";
+
+  if (hour >= 5 && hour < 12) {
+    greeting = "🌅 Good Morning";
+  } else if (hour >= 12 && hour < 17) {
+    greeting = "☀️ Good Afternoon";
+  }
+
+  // ==========================
+  // User Initials
+  // ==========================
+
+  const initials = currentUser?.name
+    ? currentUser.name
+        .split(" ")
+        .map((word) => word[0])
+        .join("")
+        .toUpperCase()
+    : "U";
 
   return (
     <div className="dashboard">
@@ -56,7 +119,7 @@ function Dashboard() {
       <div className="dashboard-header">
 
         <div>
-          <p className="greeting">👋 Good Morning</p>
+          <p className="greeting">{greeting}</p>
           <h1>Your Study Dashboard</h1>
         </div>
 
@@ -69,11 +132,9 @@ function Dashboard() {
             + Add Session
           </button>
 
-          <img
-            src="https://i.pravatar.cc/150?img=12"
-            alt="profile"
-            className="avatar"
-          />
+          <div className="avatar">
+            {initials}
+          </div>
 
         </div>
 
@@ -109,13 +170,13 @@ function Dashboard() {
 
       <div className="dashboard-body">
 
-        <StudyPlanCard tasks={tasks} />
+        <StudyPlanCard tasks={todaysTasks} />
 
         <div className="bottom-grid">
 
-          <WeeklyProgressCard tasks={tasks} />
+          <WeeklyProgressCard />
 
-          <UpcomingCard tasks={tasks} />
+          <UpcomingCard tasks={upcomingTasks} />
 
         </div>
 

@@ -74,18 +74,29 @@
 
 }
 
-.avatar{
+.avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #7c3aed, #2563eb);
+  color: #fff;
 
-    width:52px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
-    height:52px;
+  font-size: 18px;
+  font-weight: 700;
 
-    border-radius:50%;
+  cursor: pointer;
+  user-select: none;
 
-    object-fit:cover;
+  transition: all 0.3s ease;
+}
 
-    border:3px solid rgba(255,255,255,.15);
-
+.avatar:hover {
+  transform: scale(1.08);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
 }
 /* ======================
    Stats Grid

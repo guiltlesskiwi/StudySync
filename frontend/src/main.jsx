@@ -4,6 +4,7 @@ import { BrowserRouter } from "react-router-dom";
 
 import App from "./App";
 
+import { ThemeProvider } from "./context/ThemeContext";
 import { AuthProvider } from "./context/AuthContext";
 import { UserProvider } from "./context/UserContext";
 import { TaskProvider } from "./context/TaskContext";
@@ -16,19 +17,21 @@ import "./styles/global.css";
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <BrowserRouter>
-      <AuthProvider>
-        <UserProvider>
-          <TaskProvider>
-            <HabitProvider>
-              <CalendarProvider>
-                <AnalyticsProvider>
-                  <App />
-                </AnalyticsProvider>
-              </CalendarProvider>
-            </HabitProvider>
-          </TaskProvider>
-        </UserProvider>
-      </AuthProvider>
+      <ThemeProvider>
+        <AuthProvider>
+          <UserProvider>
+            <TaskProvider>
+              <HabitProvider>
+                <CalendarProvider>
+                  <AnalyticsProvider>
+                    <App />
+                  </AnalyticsProvider>
+                </CalendarProvider>
+              </HabitProvider>
+            </TaskProvider>
+          </UserProvider>
+        </AuthProvider>
+      </ThemeProvider>
     </BrowserRouter>
   </React.StrictMode>
 );

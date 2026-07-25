@@ -11,39 +11,29 @@ import ReminderCard from "../components/ReminderCard";
 import { useNavigate } from "react-router-dom";
 import { useTasks } from "../context/TaskContext";
 import { useAuth } from "../context/AuthContext";
+import { useTheme } from "../context/ThemeContext";
 
 function Dashboard() {
   const navigate = useNavigate();
 
   const { tasks } = useTasks();
   const { currentUser } = useAuth();
+  const { theme, toggleTheme } = useTheme();
 
-  // ==========================
   // Today's Date
-  // ==========================
-
   const today = new Date().toISOString().split("T")[0];
 
-  // ==========================
   // Today's Tasks
-  // ==========================
-
   const todaysTasks = tasks.filter(
     (task) => task.date === today
   );
 
-  // ==========================
   // Upcoming Tasks
-  // ==========================
-
   const upcomingTasks = tasks.filter(
     (task) => task.date > today
   );
 
-  // ==========================
   // Dashboard Stats
-  // ==========================
-
   const totalTasks = todaysTasks.length;
 
   const completedTasks = todaysTasks.filter(
@@ -55,18 +45,13 @@ function Dashboard() {
       ? 0
       : Math.round((completedTasks / totalTasks) * 100);
 
-  // Temporary Streak
   const streak = completedTasks;
 
-  // Today's Subjects
   const subjects = new Set(
     todaysTasks.map((task) => task.subject)
   ).size;
 
-  // ==========================
-  // Total Study Hours
-  // ==========================
-
+  // Study Hours
   let totalHours = 0;
 
   todaysTasks.forEach((task) => {
@@ -87,10 +72,7 @@ function Dashboard() {
     }
   });
 
-  // ==========================
-  // Dynamic Greeting
-  // ==========================
-
+  // Greeting
   const hour = new Date().getHours();
 
   let greeting = "🌙 Good Evening";
@@ -101,10 +83,7 @@ function Dashboard() {
     greeting = "☀️ Good Afternoon";
   }
 
-  // ==========================
   // User Initials
-  // ==========================
-
   const initials = currentUser?.name
     ? currentUser.name
         .split(" ")
@@ -115,15 +94,21 @@ function Dashboard() {
 
   return (
     <div className="dashboard">
-
       <div className="dashboard-header">
-
         <div>
           <p className="greeting">{greeting}</p>
           <h1>Your Study Dashboard</h1>
         </div>
 
         <div className="header-right">
+
+          {/* Theme Toggle */}
+          <button
+            className="theme-btn"
+            onClick={toggleTheme}
+          >
+            {theme === "dark" ? "☀️" : "🌙"}
+          </button>
 
           <button
             className="add-btn"
@@ -137,11 +122,9 @@ function Dashboard() {
           </div>
 
         </div>
-
       </div>
 
       <div className="stats-grid">
-
         <StatCard
           icon="📚"
           title="Subjects"
@@ -165,7 +148,6 @@ function Dashboard() {
           title="Focus Score"
           value={`${focusScore}%`}
         />
-
       </div>
 
       <div className="dashboard-body">
@@ -173,19 +155,13 @@ function Dashboard() {
         <StudyPlanCard tasks={todaysTasks} />
 
         <div className="bottom-grid">
-
           <WeeklyProgressCard />
-
           <UpcomingCard tasks={upcomingTasks} />
-
         </div>
 
         <div className="bottom-grid">
-
           <RecentNotesCard />
-
           <PomodoroCard />
-
         </div>
 
         <SubjectProgressCard />
@@ -193,7 +169,6 @@ function Dashboard() {
       </div>
 
       <ReminderCard />
-
     </div>
   );
 }

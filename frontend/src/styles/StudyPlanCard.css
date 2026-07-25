@@ -1,10 +1,11 @@
 .study-card {
   margin-top: 40px;
-  background: rgba(255,255,255,0.05);
-  border: 1px solid rgba(255,255,255,0.08);
+  background: var(--card);
+  border: 1px solid var(--border);
   border-radius: 22px;
   padding: 28px;
-  color: #fff;
+  color: var(--text);
+  transition: 0.3s;
 }
 
 .study-header {
@@ -17,10 +18,11 @@
 .study-header h2 {
   font-size: 26px;
   font-weight: 700;
+  color: var(--text);
 }
 
 .study-header p {
-  color: #b7bdd8;
+  color: var(--text-light);
 }
 
 .study-item {
@@ -28,7 +30,7 @@
   justify-content: space-between;
   align-items: center;
   padding: 18px 0;
-  border-bottom: 1px solid rgba(255,255,255,0.08);
+  border-bottom: 1px solid var(--border);
 }
 
 .study-item:last-child {
@@ -38,24 +40,26 @@
 .study-item h3 {
   font-size: 18px;
   margin-bottom: 6px;
+  color: var(--text);
 }
 
 .study-item span {
   font-size: 14px;
-  color: #b7bdd8;
+  color: var(--text-light);
 }
 
 .study-item.completed h3 {
-  color: #7ee787;
+  color: var(--success);
 }
+
 .empty-text {
-  color: #b7bfdc;
+  color: var(--text-light);
   text-align: center;
   padding: 20px;
   font-size: 15px;
 }
 
-.study-status{
-  font-size:22px;
-  color:#8b5cf6;
+.study-status {
+  font-size: 22px;
+  color: var(--primary);
 }

@@ -12,11 +12,13 @@
 
     padding: 26px 18px;
 
-    background: rgba(20, 33, 67, 0.95);
+    background: var(--sidebar);
 
-    border-right: 1px solid rgba(255,255,255,0.05);
+    border-right: 1px solid var(--border);
 
     backdrop-filter: blur(25px);
+
+    transition: var(--transition);
 }
 
 /* ---------- LOGO ---------- */
@@ -25,7 +27,6 @@
     display:flex;
     align-items:center;
     gap:14px;
-
     margin-bottom:45px;
 }
 
@@ -43,22 +44,24 @@
     font-weight:700;
     font-size:20px;
 
-    color:white;
+    color:#fff;
 
     background:linear-gradient(
         135deg,
-        #D79AF8,
+        var(--primary),
         #8CB6FF
     );
 
-    box-shadow:0 10px 25px rgba(0,0,0,.25);
+    box-shadow:0 10px 25px rgba(0,0,0,.18);
+
+    transition:var(--transition);
 }
 
 .logo h2{
 
     font-size:24px;
 
-    color:white;
+    color:var(--text);
 
     font-weight:700;
 }
@@ -69,7 +72,7 @@
 
     font-size:12px;
 
-    color:#7E89AF;
+    color:var(--text-light);
 
     letter-spacing:2px;
 
@@ -81,6 +84,7 @@
 .menu{
 
     display:flex;
+
     flex-direction:column;
 
     gap:8px;
@@ -98,31 +102,31 @@
 
     border-radius:14px;
 
-    color:#8E99C5;
+    color:var(--text-light);
 
     text-decoration:none;
 
-    transition:.25s;
+    transition:var(--transition);
 }
 
 .menu-item:hover{
 
-    background:#23355F;
+    background:var(--card-hover);
 
-    color:white;
+    color:var(--text);
 }
 
 .menu-item.active{
 
     background:linear-gradient(
         90deg,
-        rgba(223,146,219,.25),
-        rgba(255,255,255,.05)
+        var(--primary),
+        var(--primary-dark)
     );
 
-    color:white;
+    color:#fff;
 
-    border:1px solid rgba(230,180,255,.25);
+    box-shadow:0 8px 20px rgba(0,0,0,.15);
 }
 
 .icon{
@@ -134,18 +138,20 @@
 
 .streak-card{
 
-    background:#243962;
+    background:var(--card);
 
     border-radius:18px;
 
     padding:22px;
 
-    border:1px solid rgba(255,255,255,.06);
+    border:1px solid var(--border);
+
+    transition:var(--transition);
 }
 
 .streak-label{
 
-    color:#8A96BC;
+    color:var(--text-light);
 
     font-size:13px;
 
@@ -154,7 +160,7 @@
 
 .streak-card h2{
 
-    color:white;
+    color:var(--text);
 
     font-size:30px;
 
